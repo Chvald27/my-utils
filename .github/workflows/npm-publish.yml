@@ -11,6 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          path: .
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -18,7 +20,7 @@ jobs:
           node-version: '18'
           registry-url: 'https://npm.pkg.github.com'
 
-      - name: Authenticate to GitHub Packages
+      - name: Authenticate with GitHub Packages
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
 
       - name: Install dependencies
