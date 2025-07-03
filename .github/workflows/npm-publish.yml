@@ -29,3 +29,5 @@ jobs:
       - name: Publish package
         run: npm publish
 
+      - name: Debug .npmrc
+        run: cat ~/.npmrc
