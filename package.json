@@ -1,5 +1,5 @@
 {
-  "name": "@chvald27/my-utils",
+  "name": "my-utils",
   "version": "1.0.0",
   "description": "A simple utility library",
   "main": "index.js",
