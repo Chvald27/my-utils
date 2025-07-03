@@ -3,7 +3,7 @@ name: Publish to GitHub Packages
 on:
   push:
     tags:
-      - 'v*' # Only publishes on version tag pushes like v1.0.0
+      - 'v*'
 
 jobs:
   publish:
@@ -15,18 +15,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://npm.pkg.github.com/
-          scope: '@chvald27'
 
-      - name: Configure .npmrc for GitHub Packages
+      - name: Configure .npmrc
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+          echo "@chvald27:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       - name: Install dependencies
         run: npm install
 
-      - name: Publish package
+      - name: Publish
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
