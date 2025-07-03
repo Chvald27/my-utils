@@ -1,4 +1,4 @@
-name: Publish Package
+kname: Publish Package
 
 on:
   push:
@@ -28,3 +28,4 @@ jobs:
 
       - name: Publish package
         run: npm publish
+
