@@ -1,0 +1,16 @@
+{
+  "name": "@chvald27/my-utils",
+  "version": "1.0.0",
+  "description": "A simple utility library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Christian Valencia",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
+
